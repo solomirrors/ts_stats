@@ -17,8 +17,6 @@ module.exports = (env = {}) => {
     const getPlugins = () => {
         const plugins = [
             new HtmlWebpackPlugin({
-                title: "Webpack World",
-                buildTime: new Date().toString(),
                 template: "public/index.html",
                 filename: "index.html",
             })
@@ -70,7 +68,14 @@ module.exports = (env = {}) => {
                     generator: {
                         filename: 'font/[name][ext][query]'
                     }
-                }
+                },
+                {
+                    test: /\.(csv|tsv)$/,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'file/[name][ext][query]'
+                    }
+                },
             ],
         },
         resolve: {

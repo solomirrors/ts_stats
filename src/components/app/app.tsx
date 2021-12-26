@@ -1,5 +1,8 @@
 import * as React from "react";
 import './app.scss'
+import * as Papa from 'papaparse'
+import parseFootball from '../../football.csv'
+import FootballListContainer from "../../containers/football-list-container";
 
 const App = () => {
     return(
@@ -7,11 +10,8 @@ const App = () => {
             <div id='structure'>
                 <div id='opacity'/>
                 <div id='content'>
-                    <div id='template'>TypeScript React Template</div>
-                    <h4 id='description'>Directory Style: Contains the styles you use</h4>
-                    <h4 id='description'>Directory Script: Contains the scripts you are using.</h4>
-                    <h4 id='description'>Directory Font: Contains the fonts you use.</h4>
-                    <h4 id='description'>Directory Image: Contains the images you are using.</h4>
+                    <div id='template'>TypeScript Stats [Football]</div>
+                    <FootballListContainer/>
                 </div>
             </div>
         </React.Fragment>
