@@ -1,8 +1,11 @@
 import * as React from "react";
 import './app.scss'
-import * as Papa from 'papaparse'
-import parseFootball from '../../football.csv'
 import FootballListContainer from "../../containers/football-list-container";
+import store from "../../store";
+import footballParse from "../../services/football-service";
+
+store.subscribe(() => console.log(store.getState()))
+footballParse();
 
 const App = () => {
     return(
