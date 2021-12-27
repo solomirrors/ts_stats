@@ -2,10 +2,11 @@ import * as React from "react";
 import './app.scss'
 import FootballListContainer from "../../containers/football-list-container";
 import store from "../../store";
-import footballParse from "../../services/football-service";
+import footballServiceLoading from "../../services";
 
 store.subscribe(() => console.log(store.getState()))
-footballParse();
+footballServiceLoading();
+
 
 const App = () => {
     return(

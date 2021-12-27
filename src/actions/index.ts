@@ -1,21 +1,21 @@
-const footballDataSuccessed = (footballData: unknown[]) => {
-    return{
-        type: 'FETCH_FOOTBALL_DATA_SUCCESS',
-        payload: footballData
+const footballDataAction = (footballData: unknown = {}, action: string, error: string = '') => {
+    switch (action){
+        case 'FETCH_FOOTBALL_DATA_SUCCESS':
+            return{
+                type: 'FETCH_FOOTBALL_DATA_SUCCESS',
+                payload: footballData
+            }
+        case 'FETCH_FOOTBALL_DATA_REQUEST':
+            return{
+                type: 'FETCH_FOOTBALL_DATA_REQUEST'
+            }
+        case 'FETCH_FOOTBALL_DATA_FAILURE':
+            return {
+                type: 'FETCH_FOOTBALL_DATA_FAILURE',
+                payload: error
+            }
+        default: return footballData;
     }
 }
 
-const footballDataRequested = () => {
-    return{
-        type: 'FETCH_FOOTBALL_DATA_REQUEST'
-    }
-}
-
-const footballDataFailured = (error: string) => {
-    return {
-        type: 'FETCH_FOOTBALL_DATA_FAILURE',
-        payload: error
-    }
-}
-
-export {footballDataSuccessed, footballDataRequested, footballDataFailured}
+export default footballDataAction;

@@ -1,13 +1,10 @@
-import * as Papa from "papaparse";
 import store from "../store";
 import parseFootball from "../assets/files/football.csv";
-import {footballDataSuccessed} from "../actions";
+import footballDataAction from "../actions";
+import csvUrlParser from "../utils/csv-parser";
 
-const footballParse = () => Papa.parse(`${parseFootball}`, {
-    download: true,
-    complete: function(results) {
-        store.dispatch(footballDataSuccessed(results.data))
-    }
-});
+const footballServiceLoading = async () => {
+    return store.dispatch(footballDataAction(await csvUrlParser(`${parseFootball}`), 'FETCH_FOOTBALL_DATA_SUCCESS'))
+}
 
-export default footballParse;
+export default footballServiceLoading;
