@@ -1,26 +1,23 @@
 import * as React from 'react'
 
-const FootballListItem = () => {
+export interface FootballListItemProps{
+    match: Array<any>,
+    index: number
+}
+
+const FootballListItem = ({match, index} : FootballListItemProps) => {
     return (
         <React.Fragment>
-            <tr>
-                <th>Data</th>
-                <th>Team 1</th>
-                <th>Team 2</th>
-                <th>Goals scored</th>
-                <th>Name</th>
-                <th>Name</th>
-                <th>Name</th>
+            <tr key={index}>
+                <th>{match[0]}</th>
+                <th>{match[1]}</th>
+                <th>{match[2]}</th>
+                <th>{match[3]}</th>
+                <th>{match[4]}</th>
+                <th>{match[5]}</th>
+                <th>{match[6]}</th>
             </tr>
-            <tr>
-                <th>Data</th>
-                <th>Team 1</th>
-                <th>Team 2</th>
-                <th>Goals scored</th>
-                <th>Name</th>
-                <th>Name</th>
-                <th>Name</th>
-            </tr>
+
         </React.Fragment>
     )
 }

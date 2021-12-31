@@ -2,7 +2,9 @@ import * as React from "react";
 import './app.scss'
 import FootballListContainer from "../../containers/football-list-container";
 import store from "../../store";
+import {Provider} from "react-redux";
 import footballServiceLoading from "../../services";
+import PackedFootballListContainer from "../../containers/football-list-container";
 
 store.subscribe(() => console.log(store.getState()))
 footballServiceLoading();
@@ -10,15 +12,15 @@ footballServiceLoading();
 
 const App = () => {
     return(
-        <React.Fragment>
+        <Provider store={store}>
             <div id='structure'>
                 <div id='opacity'/>
                 <div id='content'>
                     <div id='template'>TypeScript Stats [Football]</div>
-                    <FootballListContainer/>
+                    <PackedFootballListContainer/>
                 </div>
             </div>
-        </React.Fragment>
+        </Provider>
     )
 }
 
