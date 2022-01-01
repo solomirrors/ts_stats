@@ -3,14 +3,14 @@ import FootballList from "../../components/football-list";
 import {connect} from "react-redux";
 
 export interface FootballListContainerProps {
-    matches: Array<string[]>
+    matches: string[][]
     loading: boolean
     error: boolean
 }
 
 export interface FootballListMapStateToProps {
     footballData: {
-        matches: Array<string[]>
+        matches: string[][]
         loading: boolean
         error: boolean
     }
