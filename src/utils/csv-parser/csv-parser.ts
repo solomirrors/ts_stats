@@ -1,8 +1,7 @@
 import * as Papa from "papaparse";
-import {useState} from "react";
 
 const csvUrlParser = async (csvUrl: string) => {
-    return new Promise(function (resolve) {
+    return new Promise((resolve) => {
         Papa.parse(csvUrl, {
             download: true,
             complete: (results) => {

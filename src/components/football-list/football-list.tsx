@@ -3,12 +3,10 @@ import './football-list.scss'
 import FootballListItem from "../football-list-item";
 
 export interface FootballListProps{
-    matches: Array<any>,
-    loading: boolean,
-    error: boolean,
+    matches: Array<[]>
 }
 
-const FootballList = ({matches, loading, error}: FootballListProps) => {
+const FootballList = ({matches}: FootballListProps) => {
     return (
         <table id='football-table'>
             <thead>

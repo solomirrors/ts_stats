@@ -3,14 +3,14 @@ import FootballList from "../../components/football-list";
 import {connect} from "react-redux";
 
 export interface FootballListContainerProps {
-    matches: Array<any>
+    matches: Array<[]>
     loading: boolean
     error: boolean
 }
 
 export interface FootballListMapStateToProps {
     footballData: {
-        matches: Array<any>
+        matches: Array<[]>
         loading: boolean
         error: boolean
     }
@@ -18,10 +18,10 @@ export interface FootballListMapStateToProps {
 
 class FootballListContainer extends React.Component<FootballListContainerProps>{
     render(){
-        const {matches, loading, error} = this.props;
+        const {matches} = this.props;
 
         return(
-            <FootballList matches={matches} loading={loading} error={error}/>
+            <FootballList matches={matches}/>
         )
     }
 }
