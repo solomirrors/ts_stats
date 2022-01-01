@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export interface FootballListItemProps{
-    match: Array<[]>,
+    match: Array<string>,
     index: number
 }
 

@@ -3,7 +3,7 @@ import './football-list.scss'
 import FootballListItem from "../football-list-item";
 
 export interface FootballListProps{
-    matches: Array<[]>
+    matches: Array<string[]>
 }
 
 const FootballList = ({matches}: FootballListProps) => {
