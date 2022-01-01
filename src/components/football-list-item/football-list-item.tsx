@@ -9,6 +9,7 @@ const FootballListItem = ({match, index} : FootballListItemProps) => {
     return (
         <React.Fragment>
             <tr key={index}>
+                <th>{index+1}</th>
                 <th>{match[0]}</th>
                 <th>{match[1]}</th>
                 <th>{match[2]}</th>
